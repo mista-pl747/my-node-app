@@ -23,3 +23,5 @@ if (process.argv[1] && process.argv[1].endsWith('app.js')) {
 export default app;
 
 // test 2 
+
+app.get('/health', (req, res) => res.json({ status: 'ok' }));
