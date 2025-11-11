@@ -7,8 +7,17 @@ app.get('/', (req, res) => {
   res.send('Hello from my Node.js app!');
 });
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+// istanbul ignore next
+const startServer = () => {
+  const port = process.env.PORT || 3000;
+  app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+  });
+};
 
-module.exports = app;
+// istanbul ignore if
+if (process.argv[1] && process.argv[1].endsWith('app.js')) {
+  startServer();
+}
+
+export default app;

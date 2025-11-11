@@ -3,4 +3,9 @@ module.exports = {
   coverageDirectory: 'coverage',
   coverageReporters: ['lcov', 'text'],
   testEnvironment: 'node',
+  globals: {
+    'ts-jest': {
+      useESM: true
+    }
+  }
 };
