@@ -1,5 +1,5 @@
-const request = require('supertest');
-const app = require('./app');
+import request from 'supertest';
+import app from './app.js';
 
 describe('Basic routes', () => {
   test('GET / should return hello message', async () => {
